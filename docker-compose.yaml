@@ -2,10 +2,14 @@ name: expense
 networks:
   default:
     name: expense
+volumes:
+ mysql:
 services:
   mysql:
     image: mysql:1.0
     container_name: mysql
+    volumes:
+      - mysql:/var/lib/mysql
   backend:
     image: backend:1.0
     container_name: backend
