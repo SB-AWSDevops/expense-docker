@@ -11,7 +11,7 @@
  
 Using the official MySQL image ensures regular updates and security patches, crucial for handling sensitive financial data.
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 
 # 2. Keep Images Small
@@ -21,7 +21,7 @@ Remove Unnecessary Files: Clean up package lists, cache files, and other unneces
 
  Building a microservice for customer authentication using a minimal base image.The node:16-alpine image is small, reducing the image size and potential vulnerabilities.
 
- ![alt text](image-1.png)
+ ![alt text](images/image-1.png)
 
 # 3. Tag Images Properly
 
@@ -31,7 +31,7 @@ Version Tagging: Tag images with version numbers (e.g., myapp:1.0) instead of ju
 
  Deploying a new version of a fraud detection microservice. Tagging the image with fraud-detection:1.0 avoids ambiguity and ensures the correct version is deployed.
 
- ![alt text](image-2.png)
+ ![alt text](images/image-2.png)
 
 # 4. Manage Secrets Securely
 Environment Variables: Avoid hardcoding secrets in your Dockerfile or image. Use environment variables or Docker secrets for sensitive information.
@@ -41,7 +41,7 @@ Docker Secrets: Utilize Docker Swarm or Kubernetes secrets management for secure
 
 Storing API keys for payment gateway integration. Using environment variables to handle sensitive information like API keys, ensuring they are not exposed in the image.
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 # 5. Use Dockerignore
 .dockerignore File: Include a .dockerignore file to prevent unnecessary files and directories from being added to the build context, speeding up the build process and keeping the image clean.
@@ -50,7 +50,7 @@ Storing API keys for payment gateway integration. Using environment variables to
 
 Building a customer service application. 
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 
 # 6. Run as Non-Root User
@@ -60,7 +60,7 @@ Non-Root User: Create and run containers with a non-root user to improve securit
 
 Running a web application to display account statements.  Running the container as a non-root user enhances security by limiting the potential impact of a security breach.
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 
 # 7. Optimize Layer Caching
@@ -71,7 +71,7 @@ Combine Commands: Combine commands where possible to reduce the number of layers
 
 Building a transaction processing service. Ordering instructions to maximize layer caching ensures that dependencies are not re-downloaded if only application code changes.
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 
 # 8. Leverage Health Checks
@@ -81,7 +81,7 @@ Healthcheck: Define HEALTHCHECK instructions in your Dockerfile to allow Docker 
 
 Ensuring the availability of an account management service. The HEALTHCHECK instruction helps monitor the health of the service and take action if it becomes unhealthy.
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 # 9. Use Volumes for Persistent Data
 Volumes: Use Docker volumes to persist data outside of the container’s filesystem, ensuring data is not lost when the container is removed or updated.
@@ -90,7 +90,7 @@ Volumes: Use Docker volumes to persist data outside of the container’s filesys
 
 Storing customer profile images. Volumes ensure that customer profile images are not lost when the container is updated or removed.
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 
 Bind Mounts: Use bind mounts for development to sync code changes in real-time.
@@ -102,7 +102,7 @@ Resource Constraints: Set resource limits (--memory, --cpu-shares, etc.) to prev
 
 Running a credit scoring service with resource constraints. Resource limits prevent the service from consuming too much memory or CPU, ensuring fair resource allocation.
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 
 # 11. Network Configuration
@@ -112,7 +112,7 @@ Custom Networks: Use custom networks to isolate containers and manage communicat
 
 Isolating backend services for a banking application.  Custom networks isolate containers, enhancing security and managing communication efficiently.
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 Service Discovery: Use Docker's built-in DNS service for container name resolution within custom networks.
 # 12. Log Management
@@ -123,7 +123,7 @@ Centralized Logging: Use centralized logging solutions to aggregate and analyze 
 
 Aggregating logs from multiple instances of a loan approval service. Using the syslog driver to send logs to a centralized syslog server for aggregation and analysis.
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 
 # 13. Security Best Practices
@@ -134,7 +134,7 @@ Regular Updates: Regularly update base images and dependencies to mitigate vulne
 
 Running a highly sensitive financial transaction service. Regular updates and running with minimal privileges mitigate vulnerabilities.
 
-![alt text](image-12.png)
+![alt text](images/image-12.png)
 
 
 # 14. Automated Builds and CI/CD Integration
@@ -145,7 +145,7 @@ Automated Tests: Write and run automated tests to validate your Docker images be
 
 Automating the build and deployment of a mortgage application. Integrating Docker builds into CI/CD pipelines automates testing, building, and deployment, ensuring consistency and reliability.
 
-![alt text](image-13.png)
+![alt text](images/image-13.png)
 
 
 # 15. Documentation and Comments
@@ -155,6 +155,6 @@ Document Dockerfiles: Comment and document your Dockerfiles to explain the purpo
 
 Documenting the Dockerfile for an investment portfolio service. 
 
-![alt text](image-14.png)
+![alt text](images/image-14.png)
 
 By following these best practices, you can ensure that your Docker containers are secure, efficient, and maintainable.
