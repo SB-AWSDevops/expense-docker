@@ -1,0 +1,20 @@
+name: expense
+networks:
+  default:
+    name: expense
+services:
+  mysql:
+    image: mysql:1.0
+    container_name: mysql
+  backend:
+    image: backend:1.0
+    container_name: backend
+    depends_on:
+      - mysql
+  frontend:
+    image: frontend:1.0
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
