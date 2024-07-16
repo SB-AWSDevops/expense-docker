@@ -24,21 +24,75 @@ Remove Unnecessary Files: Clean up package lists, cache files, and other unneces
  ![alt text](image-1.png)
 
 # 3. Tag Images Properly
+
 Version Tagging: Tag images with version numbers (e.g., myapp:1.0) instead of just using latest to avoid ambiguity and ensure consistency across deployments.
+
+ > simple real case scenario example:
+
+ Deploying a new version of a fraud detection microservice. Tagging the image with fraud-detection:1.0 avoids ambiguity and ensures the correct version is deployed.
+
+ ![alt text](image-2.png)
+
 # 4. Manage Secrets Securely
 Environment Variables: Avoid hardcoding secrets in your Dockerfile or image. Use environment variables or Docker secrets for sensitive information.
 Docker Secrets: Utilize Docker Swarm or Kubernetes secrets management for secure storage and usage of sensitive data.
+
+> simple real case scenario example:
+
+Storing API keys for payment gateway integration. Using environment variables to handle sensitive information like API keys, ensuring they are not exposed in the image.
+
+![alt text](image-3.png)
+
 # 5. Use Dockerignore
 .dockerignore File: Include a .dockerignore file to prevent unnecessary files and directories from being added to the build context, speeding up the build process and keeping the image clean.
+
+> simple real case scenario example:
+
+Building a customer service application. 
+
+![alt text](image-4.png)
+
+
 # 6. Run as Non-Root User
 Non-Root User: Create and run containers with a non-root user to improve security. You can add a user in the Dockerfile using RUN useradd -m myuser and switch to that user with USER myuser.
+
+> simple real case scenario example:
+
+Running a web application to display account statements.  Running the container as a non-root user enhances security by limiting the potential impact of a security breach.
+
+![alt text](image-5.png)
+
+
 # 7. Optimize Layer Caching
 Layer Order: Order your Dockerfile instructions to maximize layer caching. Frequently changing commands should be at the end of the Dockerfile.
 Combine Commands: Combine commands where possible to reduce the number of layers, but balance it with readability.
+
+> simple real case scenario example:
+
+Building a transaction processing service. Ordering instructions to maximize layer caching ensures that dependencies are not re-downloaded if only application code changes.
+
+![alt text](image-6.png)
+
+
 # 8. Leverage Health Checks
 Healthcheck: Define HEALTHCHECK instructions in your Dockerfile to allow Docker to monitor the health of your application and take action if it becomes unhealthy.
+
+> simple real case scenario example:
+
+Ensuring the availability of an account management service. The HEALTHCHECK instruction helps monitor the health of the service and take action if it becomes unhealthy.
+
+![alt text](image-7.png)
+
 # 9. Use Volumes for Persistent Data
 Volumes: Use Docker volumes to persist data outside of the container’s filesystem, ensuring data is not lost when the container is removed or updated.
+
+> simple real case scenario example:
+
+Storing customer profile images. Volumes ensure that customer profile images are not lost when the container is updated or removed.
+
+![alt text](image-8.png)
+
+
 Bind Mounts: Use bind mounts for development to sync code changes in real-time.
 # 10. Limit Container Resources
 Resource Constraints: Set resource limits (--memory, --cpu-shares, etc.) to prevent a single container from consuming excessive resources on the host.
