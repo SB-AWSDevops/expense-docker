@@ -94,21 +94,67 @@ Storing customer profile images. Volumes ensure that customer profile images are
 
 
 Bind Mounts: Use bind mounts for development to sync code changes in real-time.
+
 # 10. Limit Container Resources
 Resource Constraints: Set resource limits (--memory, --cpu-shares, etc.) to prevent a single container from consuming excessive resources on the host.
+
+> simple real case scenario example:
+
+Running a credit scoring service with resource constraints. Resource limits prevent the service from consuming too much memory or CPU, ensuring fair resource allocation.
+
+![alt text](image-9.png)
+
+
 # 11. Network Configuration
 Custom Networks: Use custom networks to isolate containers and manage communication more securely and efficiently.
+
+> simple real case scenario example:
+
+Isolating backend services for a banking application.  Custom networks isolate containers, enhancing security and managing communication efficiently.
+
+![alt text](image-10.png)
+
 Service Discovery: Use Docker's built-in DNS service for container name resolution within custom networks.
 # 12. Log Management
 Log Drivers: Configure appropriate log drivers (json-file, syslog, fluentd, etc.) to manage container logs effectively.
 Centralized Logging: Use centralized logging solutions to aggregate and analyze logs from multiple containers and hosts.
+
+> simple real case scenario example:
+
+Aggregating logs from multiple instances of a loan approval service. Using the syslog driver to send logs to a centralized syslog server for aggregation and analysis.
+
+![alt text](image-11.png)
+
+
 # 13. Security Best Practices
 Minimal Privileges: Grant the minimum necessary privileges to your containers.
 Regular Updates: Regularly update base images and dependencies to mitigate vulnerabilities.
+
+> simple real case scenario example:
+
+Running a highly sensitive financial transaction service. Regular updates and running with minimal privileges mitigate vulnerabilities.
+
+![alt text](image-12.png)
+
+
 # 14. Automated Builds and CI/CD Integration
 CI/CD Pipelines: Integrate Docker builds into your CI/CD pipelines to automate testing, building, and deployment of images.
 Automated Tests: Write and run automated tests to validate your Docker images before deploying them.
+
+> simple real case scenario example:
+
+Automating the build and deployment of a mortgage application. Integrating Docker builds into CI/CD pipelines automates testing, building, and deployment, ensuring consistency and reliability.
+
+![alt text](image-13.png)
+
+
 # 15. Documentation and Comments
 Document Dockerfiles: Comment and document your Dockerfiles to explain the purpose of each instruction, making it easier for others to understand and maintain.
+
+> simple real case scenario example:
+
+Documenting the Dockerfile for an investment portfolio service. 
+
+![alt text](image-14.png)
 
 By following these best practices, you can ensure that your Docker containers are secure, efficient, and maintainable.
