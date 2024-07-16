@@ -4,6 +4,7 @@ networks:
     name: expense
 volumes:
  mysql:
+  external: true
 services:
   mysql:
     image: mysql:1.0
