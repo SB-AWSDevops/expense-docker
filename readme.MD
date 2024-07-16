@@ -1,12 +1,14 @@
 ##  Docker Best Practices
 # 1. Use Official and Verified Images
-> Official Images: Start with official images from Docker Hub when possible, as they are maintained and updated regularly.
+* Official Images: Start with official images from Docker Hub when possible, as they are maintained and updated regularly.
 
-> Minimal Base Images: Use minimal base images (like alpine) to reduce the attack surface and image size.
-# simple real case scenario example:
+* Minimal Base Images: Use minimal base images (like alpine) to reduce the attack surface and image size.
+
+ > simple real case scenario example:
+
  A banking application requires a MySQL database for storing customer transaction records.
 
-# Example: 
+ 
 Using the official MySQL image ensures regular updates and security patches, crucial for handling sensitive financial data.
 
 ![alt text](image.png)
@@ -15,6 +17,12 @@ Using the official MySQL image ensures regular updates and security patches, cru
 # 2. Keep Images Small
 Multi-Stage Builds: Use multi-stage builds to minimize the final image size by only including necessary components.
 Remove Unnecessary Files: Clean up package lists, cache files, and other unnecessary files to keep the image lean.
+ > simple real case scenario example:
+
+ Building a microservice for customer authentication using a minimal base image.The node:16-alpine image is small, reducing the image size and potential vulnerabilities.
+
+ ![alt text](image-1.png)
+ 
 # 3. Tag Images Properly
 Version Tagging: Tag images with version numbers (e.g., myapp:1.0) instead of just using latest to avoid ambiguity and ensure consistency across deployments.
 # 4. Manage Secrets Securely
