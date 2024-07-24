@@ -2,10 +2,8 @@ name: expense
 networks:
   default:
     name: expense
-volumes:
- mysql:
-  external: true
- #if true,  docker volume create myqsl
+#   external: true
+#  #if true,  docker volume create myqsl
 services:
   mysql:
     image: premdaas/mysql:1.0
