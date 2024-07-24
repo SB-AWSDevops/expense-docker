@@ -6,7 +6,7 @@ networks:
 #  #if true,  docker volume create myqsl
 services:
   mysql:
-    image: premdaas/mysql:1.0
+    image: premdaas/mysql:1.1
     container_name: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=ExpenseApp@1
@@ -18,13 +18,13 @@ services:
        target: /var/lib/mysql
        type: volume
   backend:
-    image: premdaas/backend:1.0
+    image: premdaas/backend:1.1
     container_name: backend
     command: sh -c "sleep 20 && node /app/index.js"
     depends_on:
       - mysql
   frontend:
-    image: premdaas/frontend:1.0
+    image: premdaas/frontend:1.1
     container_name: frontend
     depends_on:
       - backend
